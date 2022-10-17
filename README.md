@@ -27,6 +27,6 @@ npm run build
 ```sh
 npm run lint
 ```
-# Dependencies
+## Dependencies
 * Vue
 * Vue-Router
