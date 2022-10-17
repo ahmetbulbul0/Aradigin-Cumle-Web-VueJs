@@ -11,19 +11,19 @@
 
 ### * install npm (for npm packages)
 ```sh
-    npm install
+npm install
 ```
 ### * to run project in development environment
 ```sh
-    npm run dev
+npm run dev
 ```
 
 * Compile and Minify for Production
 ```sh
-    npm run build
+npm run build
 ```
 
 ### * Lint with
 ```sh
-    npm run lint
+npm run lint
 ```
