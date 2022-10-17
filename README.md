@@ -1,35 +1,29 @@
-# aradigin-cumle-web
+# Aradigin-Cumle-Web
 
-This template should help get you started developing with Vue 3 in Vite.
+***Aradigin Cumle Web Project***
 
-## Recommended IDE Setup
+## Technologies
+* **Vue**
+* **Css**
+* **Js**
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Project Setup Process
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
+### * install npm (for npm packages)
 ```sh
-npm install
+    npm install
+```
+### * to run project in development environment
+```sh
+    npm run dev
 ```
 
-### Compile and Hot-Reload for Development
-
+* Compile and Minify for Production
 ```sh
-npm run dev
+    npm run build
 ```
 
-### Compile and Minify for Production
-
+### * Lint with
 ```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
+    npm run lint
 ```
