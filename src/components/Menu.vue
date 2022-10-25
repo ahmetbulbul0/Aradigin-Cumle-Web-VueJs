@@ -5,25 +5,24 @@
         <span class="textBox">
           <a href="" class="strong">
             <i class="far fa-newspaper"></i>
-            AradığınCümle
+            <router-link :to="{ name: 'Home' }">AradığınCümle</router-link>
           </a>
         </span>
         <span class="brace"></span>
         <span class="textBox">
-          <router-link :to="{ name: 'Home' }">AnaSayfa</router-link>
+          <router-link :to="{ name: 'Home' }">Kategori1</router-link>
         </span>
         <span class="brace"></span>
         <span class="textBox">
-          <router-link :to="{ name: 'NewsDetail', params: { newsSlug: 'deneme' } }">HaberDetay</router-link
-          >
+          <router-link :to="{ name: 'Home' }">Kategori2</router-link>
         </span>
         <span class="brace"></span>
         <span class="textBox">
-          <router-link :to="{ name: 'NewsList', params: { listType: 'son-yayinlananlar'} }">HaberListesi</router-link>
+          <router-link :to="{ name: 'Home' }">Kategori3</router-link>
         </span>
         <span class="brace"></span>
         <span class="textBox">
-          <router-link :to="{ name: 'SignIn' }">GirişYap</router-link>
+          <router-link :to="{ name: 'Home' }">Kategori4</router-link>
         </span>
       </div>
       <div class="bar">

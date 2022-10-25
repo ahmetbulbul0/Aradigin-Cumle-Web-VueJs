@@ -28,12 +28,12 @@ const router = createRouter({
         },
         {
           name: "NewsListResourcePlatform",
-          path: "kaynak/:resourcePlatformLinkUrl/:listType/:page?",
+          path: "kaynak/:resourcePlatformSlug/:listType/:page?",
           component: () => import("../views/NewsListView.vue"), // DEĞİŞTİR
         },
         {
           name: "NewsListCategory",
-          path: "kategori/:categoryGroupLinkUrl/:listType/:page?",
+          path: "kategori/:categorySlug/:listType/:page?",
           component: () => import("../views/NewsListView.vue"), // DEĞİŞTİR
         },
       ],

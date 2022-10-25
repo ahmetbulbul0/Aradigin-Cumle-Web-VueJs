@@ -5,30 +5,19 @@
         <div class="outNewsDetail">
           <div class="inNewsDetail">
             <div class="line">
-              <span class="content"
-                >Amet amet cupidatat voluptate non non dolore laboris commodo.
-                Aute laboris nisi fugiat quis ad reprehenderit fugiat. Eu qui eu
-                cillum eiusmod tempor excepteur quis amet id incididunt. Esse
-                deserunt eu adipisicing consectetur id aute. Fugiat Lorem ex
-                reprehenderit est sunt quis enim incididunt. Magna adipisicing
-                eu labore nulla veniam laborum minim quis magna ipsum irure.
-                Dolor excepteur enim sunt anim eu veniam.</span
-              >
+              <span class="content"><b>{{ data.title }}</b></span>
+            </div>
+            <div class="line">
+              <span class="content">{{ data.content }}</span>
             </div>
             <div class="line dateAuthor">
-              <span class="writer"
-                >Yazar: <a href="">ahme1bulbul [Ahmet Bülbül]</a></span
-              >
-              <span class="date">bugün</span>
+              <span class="writer">Yazar:<a href="">{{ data.author.username }} [{{ data.author.fullName }}]</a></span>
+              <span class="date">{{ data.publishDate }}</span>
             </div>
             <div class="line category">
               <span class="category">
-                <a href="" class="onlyGradientBackground"> Kategori </a>
-                <a href="" class="onlyGradientBackground"> Kategori </a>
-                <a href="" class="onlyGradientBackground"> Kategori </a>
-                <a href="" class="onlyGradientBackground"> Kategori </a>
-                <a href="" class="onlyGradientBackground"> Kategori </a>
-                <a href="" class="onlyGradientBackground"> Kategori </a>
+                <a href="" class="onlyGradientBackground" v-if="data.category.parentCategory"> {{ data.category.parentCategory.name }} </a>
+                <a href="" class="onlyGradientBackground"> {{ data.category.name }} </a>
               </span>
               <span class="category">
                 <a href="" class="onlyGradientText">
@@ -37,14 +26,12 @@
               </span>
             </div>
             <div class="line resource">
-              <span class="resource">Kaynak: <a href="">Kaynak Site</a></span>
+              <span class="resource">Kaynak: <a :href="data.resourcePlatform.mainUrl">{{ data.resourcePlatform.name }}</a></span>
               <span class="resource">
-                <a href="" target="blank">Kaynak Haber Linki</a>
+                <a :href="data.resourceUrl.url" target="blank">Kaynak Haber Linki</a>
               </span>
               <span class="resource">
-                <a href="" target="blank">
-                  Bu Kaynak Haber Sitesine Ait Diğer Haberler
-                </a>
+                <router-link :to="{ name: 'NewsListResourcePlatform', params: {resourcePlatformSlug: data.resourcePlatform.slug, listType: 'son-yayinlananlar'} }">Bu Kaynak Haber Sitesine Ait Diğer Haberler</router-link>
               </span>
             </div>
           </div>
@@ -54,3 +41,10 @@
     </div>
   </div>
 </template>
+
+<script setup>
+
+const props = defineProps(["data"]);
+const data = props.data.data;
+
+</script>

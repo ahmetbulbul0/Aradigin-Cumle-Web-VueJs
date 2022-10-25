@@ -144,6 +144,9 @@ body.light .outMenu {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+.outMenu .inMenu .bar .textBox a.strong i {
+    margin-right: 6px
+}
 .outMenu .inMenu .outFullLine {
     position: absolute;
     width: calc(100% - 100px);
