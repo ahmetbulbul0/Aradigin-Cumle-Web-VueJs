@@ -14,7 +14,7 @@ const router = createRouter({
       component: () => import("../views/NewsDetailView.vue"),
     },
     {
-      path: "/haber-listesi",
+      path: "/haberler",
       children: [
         {
           name: "NewsList",
