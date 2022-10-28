@@ -1,6 +1,6 @@
 <template>
     <div class="outPaginate">
-        <div class="inPaginate">
+        <!-- <div class="inPaginate">
             <router-link :to="{ name: 'NewsList', params: { listType: link, page: data.previousPage } }" v-if="data.previousPage"><i class="fas fa-arrow-left"></i></router-link>
             <span class="emptiess" v-if="data.nowPage > 3">...</span>
             <router-link :to="{ name: 'NewsList', params: { listType: link, page: data.previousPreviousPage } }" v-if="data.previousPreviousPage" class="number">{{ data.previousPreviousPage }}</router-link>
@@ -10,6 +10,18 @@
             <router-link :to="{ name: 'NewsList', params: { listType: link, page: data.nextNextPage } }" v-if="data.nextNextPage" class="number">{{ data.nextNextPage }}</router-link>
             <span class="emptiess" v-if="(data.nowPage + 2) < data.totalPageNumber">...</span>
             <router-link :to="{ name: 'NewsList', params: { listType: link, page: data.nextPage } }" v-if="data.nextPage"><i class="fas fa-arrow-right"></i></router-link>
+        </div> -->
+
+        <div class="inPaginate">
+            <a :href="data.previousPage" v-if="data.previousPage"><i class="fas fa-arrow-left"></i></a>
+            <span class="emptiess" v-if="data.nowPage > 3">...</span>
+            <a :href="data.previousPreviousPage" v-if="data.previousPreviousPage" class="number">{{ data.previousPreviousPage }}</a>
+            <a :href="data.previousPage" v-if="data.previousPage" class="number">{{ data.previousPage }}</a>
+            <a :href="data.nowPage" class="number active">{{ data.nowPage }}</a>
+            <a :href="data.nextPage" v-if="data.nextPage" class="number">{{ data.nextPage }}</a>
+            <a :href="data.nextNextPage" v-if="data.nextNextPage" class="number">{{ data.nextNextPage }}</a>
+            <span class="emptiess" v-if="(data.nowPage + 2) < data.totalPageNumber">...</span>
+            <a :href="data.nextPage" v-if="data.nextPage"><i class="fas fa-arrow-right"></i></a>
         </div>
     </div>
 </template>
