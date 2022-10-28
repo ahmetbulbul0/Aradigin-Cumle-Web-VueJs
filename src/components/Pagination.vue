@@ -15,6 +15,8 @@
 </template>
 
 <script setup>
+    import router from "../router";
+
     const props = defineProps(["data", "link"]);
     const data = props.data;
     const link = props.link;
