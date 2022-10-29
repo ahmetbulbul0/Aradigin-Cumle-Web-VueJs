@@ -14,7 +14,7 @@
     </div>
 </template>
 
-<script lang="js" setup>
+<script setup>
     const props = defineProps(["data", "link"]);
     const data = props.data;
     const link = props.link;
