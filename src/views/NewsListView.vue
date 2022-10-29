@@ -7,8 +7,6 @@ import BigList from "../components/BigList.vue";
 import { useRoute } from 'vue-router';
 import { getList } from "../api";
 import { sortingGenerateByListType } from "../tools/SortingGenerator.js"
-import { ref } from "@vue/reactivity";
-import { watchEffect } from "@vue/runtime-core";
 
 const route = useRoute();
 const routeParams = route.params;

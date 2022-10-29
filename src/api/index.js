@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://127.0.0.1:8000/api";
+const API_URL = "https://api.aradigincumle.com/api";
 
 async function getList(url, params = null) {
     var baseUrl = API_URL+"/"+url;
