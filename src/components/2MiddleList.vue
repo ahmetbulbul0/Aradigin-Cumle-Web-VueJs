@@ -16,5 +16,4 @@ const middle2ListData = props.middle2ListData;
 
 const list1Data = middle2ListData[0];
 const list2Data = middle2ListData[1];
-
 </script>

@@ -1,15 +1,14 @@
 <template>
-  <layout>
+  <ViewLayout>
     <template v-slot:realBody>
       <suspense>
         <router-view />
       </suspense>
     </template>
-  </layout>
+  </ViewLayout>
 </template>
 
 <script setup>
 import { RouterView } from "vue-router";
-import layout from "./views/layout.vue";
-
+import ViewLayout from "./views/ViewLayout.vue";
 </script>

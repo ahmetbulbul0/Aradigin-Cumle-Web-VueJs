@@ -67,9 +67,6 @@ const bigListData = {
   title: "Son Yayınlananlar",
   list: newsForBigList.data,
   allListLink: "son-yayinlananlar",
-  pagination: newsForBigList.pagination
+  pagination: newsForBigList.pagination,
 };
-
-
 </script>
-

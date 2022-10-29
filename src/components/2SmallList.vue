@@ -17,5 +17,3 @@ const small2ListData = props.small2ListData;
 const list1Data = small2ListData[0];
 const list2Data = small2ListData[1];
 </script>
-
-

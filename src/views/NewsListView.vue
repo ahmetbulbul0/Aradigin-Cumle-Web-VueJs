@@ -4,9 +4,9 @@
 
 <script setup>
 import BigList from "../components/BigList.vue";
-import { useRoute } from 'vue-router';
+import { useRoute } from "vue-router";
 import { getList } from "../api";
-import { sortingGenerateByListType } from "../tools/SortingGenerator.js"
+import { sortingGenerateByListType } from "../tools/SortingGenerator.js";
 
 const route = useRoute();
 const routeParams = route.params;
@@ -20,14 +20,13 @@ const sorting = sortingGenerateByListType("news", listType);
 var newsForBigList = await getList("news", {
   limit: 5,
   sorting: sorting,
-  page: page
+  page: page,
 });
 
 const bigListData = {
   title: "Son Yayınlananlar",
   list: newsForBigList.data,
   allListLink: "son-yayinlananlar",
-  pagination: newsForBigList.pagination
+  pagination: newsForBigList.pagination,
 };
-
 </script>
