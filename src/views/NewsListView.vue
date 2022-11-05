@@ -7,13 +7,13 @@ import BigList from "../components/BigList.vue";
 import { useRoute } from "vue-router";
 import { getList } from "../api";
 import { sortingGenerateByListType } from "../tools/SortingGenerator.js";
+import { watch, watchEffect } from "@vue/runtime-core";
 
 const route = useRoute();
-const routeParams = route.params;
 
-const listType = routeParams.listType;
+const listType = route.params.listType;
 
-const page = routeParams.page ? routeParams.page : 1;
+var page = route.params.page ? route.params.page : 1;
 
 const sorting = sortingGenerateByListType("news", listType);
 
@@ -29,4 +29,14 @@ const bigListData = {
   allListLink: "son-yayinlananlar",
   pagination: newsForBigList.pagination,
 };
+
+// watch(() => route.params.page,
+//   async (newPage) => {
+//     console.log(newPage);
+//   }
+// );
+
+watch(route.params.page, (newPage) => {
+  console.log(newPage);
+})
 </script>
