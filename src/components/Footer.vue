@@ -111,12 +111,10 @@
     </div>
     <div class="outMinFooter">
       <div class="inMinFooter">
-        <span
-          ><strong>AradığınCümle.com</strong> Haberleri Gereksiz Metinlerden
+        <span><strong>AradığınCümle.com</strong> Haberleri Gereksiz Metinlerden
           Arındırarak Asıl Bilmeniz Gereken Bilgiyi Sizlere Sade Ve Net Bir
           Şekilde Göstermeyi Amaçlayan Açık Kaynak Kodlu Bir Projedir, Katkı
-          Sağlayabilir, Api'mizi Kullanarak Yeni Şeyler Üretebilirsiniz.</span
-        >
+          Sağlayabilir, Api'mizi Kullanarak Yeni Şeyler Üretebilirsiniz.</span>
       </div>
     </div>
   </div>

@@ -48,6 +48,11 @@ const router = createRouter({
       path: "/giris-yap",
       component: () => import("../views/SignInView.vue"),
     },
+    {
+      name: "error404",
+      path: "/404",
+      component: () => import("../views/ErrorView.vue"),
+    },
   ],
 });
 

@@ -5,7 +5,7 @@
 <script setup>
 import BigList from "../components/BigList.vue";
 import { useRoute } from "vue-router";
-import { getList } from "../api";
+import { getRequest } from "../api";
 import { sortingGenerateByListType } from "../tools/SortingGenerator.js";
 import { watch, watchEffect } from "@vue/runtime-core";
 
@@ -17,26 +17,14 @@ var page = route.params.page ? route.params.page : 1;
 
 const sorting = sortingGenerateByListType("news", listType);
 
-var newsForBigList = await getList("news", {
-  limit: 5,
-  sorting: sorting,
-  page: page,
-});
-
 const bigListData = {
   title: "Son Yayınlananlar",
-  list: newsForBigList.data,
+  list: await getNews({ limit: 10, sorting: sorting, page: page }),
   allListLink: "son-yayinlananlar",
-  pagination: newsForBigList.pagination,
 };
 
-// watch(() => route.params.page,
-//   async (newPage) => {
-//     console.log(newPage);
-//   }
-// );
-
-watch(route.params.page, (newPage) => {
-  console.log(newPage);
-})
+async function getNews(params) {
+  const news = await getRequest("news", { params: params });
+  return news.data;
+}
 </script>

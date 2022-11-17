@@ -2,10 +2,7 @@
   <div class="outList">
     <div class="outTitle">
       <span class="inTitle">
-        <router-link
-          :to="{ name: 'NewsList', params: { listType: data.allListLink } }"
-          >{{ data.title }}</router-link
-        >
+        <router-link :to="{ name: 'NewsList', params: { listType: data.allListLink } }">{{ data.title }}</router-link>
       </span>
     </div>
     <div class="inList">
@@ -16,17 +13,12 @@
       </div>
       <div class="item" v-for="item in data.list.data" :key="item.no">
         <div class="content">
-          <router-link
-            :to="{ name: 'NewsDetail', params: { newsSlug: item.slug } }"
-            >{{ item.title }}</router-link
-          >
+          <router-link :to="{ name: 'NewsDetail', params: { newsSlug: item.slug } }">{{ item.title }}</router-link>
         </div>
       </div>
       <div class="outMore" v-if="data.list.length != 0">
-        <router-link
-          :to="{ name: 'NewsList', params: { listType: data.allListLink } }"
-          >Tüm Listeyi Görüntüle</router-link
-        >
+        <router-link :to="{ name: 'NewsList', params: { listType: data.allListLink } }">Tüm Listeyi Görüntüle
+        </router-link>
       </div>
     </div>
   </div>
@@ -34,6 +26,5 @@
 
 <script setup>
 const props = defineProps(["listData"]);
-
 const data = props.listData;
 </script>

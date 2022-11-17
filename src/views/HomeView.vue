@@ -10,63 +10,45 @@
 import Small2List from "../components/2SmallList.vue";
 import Middle2List from "../components/2MiddleList.vue";
 import BigList from "../components/BigList.vue";
-import { getList } from "../api";
+import { getRequest } from "../api";
 
-var newsForSmallList1 = await getList("news", {
-  limit: 5,
-  sorting: "publishDate90",
-});
-
-var newsForSmallList2 = await getList("news", {
-  limit: 5,
-  sorting: "publishDate09",
-});
-
-var newsForMiddleList1 = await getList("news", {
-  limit: 5,
-  sorting: "titleZA",
-});
-
-var newsForMiddleList2 = await getList("news", {
-  limit: 5,
-  sorting: "titleAZ",
-});
-
-var newsForBigList = await getList("news", {
-  limit: 5,
-  sorting: "publishDate90",
-});
+const news = await getRequest("news");
 
 const small2ListData = [
   {
     title: "Son Yayınlananlar",
-    list: newsForSmallList1,
+    list: await getNews({ limit: 5 }),
     allListLink: "son-yayinlananlar",
   },
   {
-    title: "Çok Okunanlar",
-    list: newsForSmallList2,
-    allListLink: "cok-okunanlar",
-  },
+    title: "Son Yayınlananlar",
+    list: await getNews({ limit: 5 }),
+    allListLink: "son-yayinlananlar",
+  }
 ];
 
 const middle2ListData = [
   {
     title: "Kategori1",
-    list: newsForMiddleList1,
+    list: await getNews({ limit: 5 }),
     allListLink: "kategori-1",
   },
   {
     title: "Kategori2",
-    list: newsForMiddleList2,
+    list: await getNews({ limit: 5 }),
     allListLink: "kategori-2",
   },
 ];
 
 const bigListData = {
   title: "Son Yayınlananlar",
-  list: newsForBigList.data,
+  list: await getNews({ limit: 10 }),
   allListLink: "son-yayinlananlar",
-  pagination: newsForBigList.pagination,
 };
+
+async function getNews(params) {
+  const news = await getRequest("news", { params: params });
+  return news.data;
+}
+
 </script>
