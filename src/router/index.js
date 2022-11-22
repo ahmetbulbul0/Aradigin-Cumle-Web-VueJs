@@ -4,11 +4,6 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      name: "Try",
-      path: "/try/:page?",
-      component: () => import("../views/TryView.vue"),
-    },
-    {
       name: "Home",
       path: "/",
       component: () => import("../views/HomeView.vue"),
@@ -29,17 +24,17 @@ const router = createRouter({
         {
           name: "NewsListAuthor",
           path: "yazar/:authorUserName/:listType/:page?",
-          component: () => import("../views/NewsListView.vue"), // DEĞİŞTİR
+          component: () => import("../views/NewsListView.vue"),
         },
         {
           name: "NewsListResourcePlatform",
           path: "kaynak/:resourcePlatformSlug/:listType/:page?",
-          component: () => import("../views/NewsListView.vue"), // DEĞİŞTİR
+          component: () => import("../views/NewsListView.vue"),
         },
         {
           name: "NewsListCategory",
           path: "kategori/:categorySlug/:listType/:page?",
-          component: () => import("../views/NewsListView.vue"), // DEĞİŞTİR
+          component: () => import("../views/NewsListView.vue"),
         },
       ],
     },
@@ -49,8 +44,8 @@ const router = createRouter({
       component: () => import("../views/SignInView.vue"),
     },
     {
-      name: "error404",
-      path: "/404",
+      name: "error",
+      path: "/hata/:errorCode",
       component: () => import("../views/ErrorView.vue"),
     },
   ],

@@ -1,9 +1,11 @@
 <template>
-  <Small2List :small2ListData="small2ListData" />
-  <Middle2List :middle2ListData="middle2ListData" />
-  <Middle2List :middle2ListData="middle2ListData" />
-  <Middle2List :middle2ListData="middle2ListData" />
-  <BigList :bigListData="bigListData" />
+  <div>
+    <Small2List :small2ListData="small2ListData" />
+    <Middle2List :middle2ListData="middle2ListData" />
+    <Middle2List :middle2ListData="middle2ListData" />
+    <Middle2List :middle2ListData="middle2ListData" />
+    <BigList :bigListData="bigListData" />
+  </div>
 </template>
 
 <script setup>
@@ -12,7 +14,6 @@ import Middle2List from "../components/2MiddleList.vue";
 import BigList from "../components/BigList.vue";
 import { getRequest } from "../api";
 
-const news = await getRequest("news");
 
 const small2ListData = [
   {
@@ -47,7 +48,7 @@ const bigListData = {
 };
 
 async function getNews(params) {
-  const news = await getRequest("news", { params: params });
+  const news = await getRequest("public/news", { params: params });
   return news.data;
 }
 

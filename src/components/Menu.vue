@@ -3,26 +3,34 @@
     <div class="inMenu">
       <div class="bar">
         <span class="textBox">
-          <a href="" class="strong">
+          <router-link :to="{ name: 'Home' }" class="strong">
             <i class="far fa-newspaper"></i>
-            <router-link :to="{ name: 'Home' }">AradığınCümle</router-link>
-          </a>
+            AradığınCümle
+          </router-link>
         </span>
         <span class="brace"></span>
         <span class="textBox">
-          <router-link :to="{ name: 'Home' }">Kategori1</router-link>
+          <router-link
+            :to="{ name: 'NewsListCategory', params: { categorySlug: 'ekonomi', listType: 'son-yayinlananlar' } }">
+            Ekonomi</router-link>
         </span>
         <span class="brace"></span>
         <span class="textBox">
-          <router-link :to="{ name: 'Home' }">Kategori2</router-link>
+          <router-link
+            :to="{ name: 'NewsListCategory', params: { categorySlug: 'siyaset', listType: 'son-yayinlananlar' } }">
+            Siyaset</router-link>
         </span>
         <span class="brace"></span>
         <span class="textBox">
-          <router-link :to="{ name: 'Home' }">Kategori3</router-link>
+          <router-link
+            :to="{ name: 'NewsListCategory', params: { categorySlug: 'magazin', listType: 'son-yayinlananlar' } }">
+            Magazin</router-link>
         </span>
         <span class="brace"></span>
         <span class="textBox">
-          <router-link :to="{ name: 'Home' }">Kategori4</router-link>
+          <router-link
+            :to="{ name: 'NewsListCategory', params: { categorySlug: 'teknoloji', listType: 'son-yayinlananlar' } }">
+            Teknoloji</router-link>
         </span>
       </div>
       <div class="bar">
@@ -40,9 +48,9 @@
         </span>
         <section class="brace"></section>
         <span class="iconBox">
-          <a href="#">
+          <router-link :to="{ name: 'SignIn' }">
             <i class="fas fa-sign-in-alt"></i>
-          </a>
+          </router-link>
         </span>
         <section class="brace"></section>
       </div>
@@ -50,10 +58,7 @@
         <div class="inFullLine">
           <div class="search">
             <div class="outInputText">
-              <input
-                type="text"
-                placeholder="Aradığın cümle ile ilgili birkaç kelime yazabilirsin"
-              />
+              <input type="text" placeholder="Aradığın cümle ile ilgili birkaç kelime yazabilirsin" />
               <i class="fas fa-search"></i>
               <i class="fas fa-times closeSearch"></i>
             </div>
@@ -77,10 +82,10 @@
           <i class="fas fa-bars mobilMenuBtn"></i>
         </span>
         <span class="logoBox">
-          <a href="#">
+          <router-link :to="{ name: 'Home' }" class="strong">
             <i class="far fa-newspaper"></i>
-            Aradığın Cümle
-          </a>
+            AradığınCümle
+          </router-link>
         </span>
         <span class="iconBox">
           <i class="fas fa-search mobilSearchBtn"></i>
@@ -93,20 +98,15 @@
       <div class="header">
         <div class="search">
           <div class="outInputText">
-            <input
-              type="text"
-              placeholder="Aradığın Cümle İle İlgili Arama Yapabilirsin"
-            />
+            <input type="text" placeholder="Aradığın Cümle İle İlgili Arama Yapabilirsin" />
             <div class="iconBox">
               <i class="fas fa-search cP"></i>
             </div>
           </div>
         </div>
-
         <div class="themeAndLinks">
           <div class="theme">
             <label for="#">Tema:</label>
-
             <form method="POST" action="#">
               <button class="active" name="websiteTheme" value="dark">
                 Koyu
@@ -114,10 +114,9 @@
               <button name="websiteTheme" value="light">Açık</button>
             </form>
           </div>
-
           <div class="linkBar">
             <span>
-              <a href="#">Giriş Yap</a>
+              <router-link :to="{ name: 'SignIn' }">Giriş Yap</router-link>
             </span>
           </div>
         </div>
@@ -127,13 +126,17 @@
           <div class="outList">
             <div class="titleBox">
               <span>
-                <a href="#">Deneme</a>
+                <router-link
+                  :to="{ name: 'NewsListCategory', params: { categorySlug: 'ekonomi', listType: 'son-yayinlananlar' } }">
+                  Ekonomi</router-link>
               </span>
             </div>
             <div class="list">
               <div class="item">
                 <span>
-                  <a href="#">Deneme</a>
+                  <router-link
+                    :to="{ name: 'NewsListCategory', params: { categorySlug: 'xxxxx', listType: 'son-yayinlananlar' } }">
+                    xxxxx</router-link>
                 </span>
               </div>
             </div>
@@ -141,13 +144,17 @@
           <div class="outList">
             <div class="titleBox">
               <span>
-                <a href="#">Deneme</a>
+                <router-link
+                  :to="{ name: 'NewsListCategory', params: { categorySlug: 'siyaset', listType: 'son-yayinlananlar' } }">
+                  Siyaset</router-link>
               </span>
             </div>
             <div class="list">
               <div class="item">
                 <span>
-                  <a href="#">Deneme</a>
+                  <router-link
+                    :to="{ name: 'NewsListCategory', params: { categorySlug: 'xxxxx', listType: 'son-yayinlananlar' } }">
+                    xxxxx</router-link>
                 </span>
               </div>
             </div>
@@ -155,13 +162,17 @@
           <div class="outList">
             <div class="titleBox">
               <span>
-                <a href="#">Deneme</a>
+                <router-link
+                  :to="{ name: 'NewsListCategory', params: { categorySlug: 'magazin', listType: 'son-yayinlananlar' } }">
+                  Magazin</router-link>
               </span>
             </div>
             <div class="list">
               <div class="item">
                 <span>
-                  <a href="#">Deneme</a>
+                  <router-link
+                    :to="{ name: 'NewsListCategory', params: { categorySlug: 'xxxxx', listType: 'son-yayinlananlar' } }">
+                    xxxxx</router-link>
                 </span>
               </div>
             </div>
@@ -169,13 +180,17 @@
           <div class="outList">
             <div class="titleBox">
               <span>
-                <a href="#">Deneme</a>
+                <router-link
+                  :to="{ name: 'NewsListCategory', params: { categorySlug: 'teknoloji', listType: 'son-yayinlananlar' } }">
+                  Teknoloji</router-link>
               </span>
             </div>
             <div class="list">
               <div class="item">
                 <span>
-                  <a href="#">Deneme</a>
+                  <router-link
+                    :to="{ name: 'NewsListCategory', params: { categorySlug: 'xxxxx', listType: 'son-yayinlananlar' } }">
+                    xxxxx</router-link>
                 </span>
               </div>
             </div>
@@ -185,13 +200,17 @@
           <div class="outList">
             <div class="titleBox">
               <span>
-                <a href="#">Deneme</a>
+                <router-link
+                  :to="{ name: 'NewsListCategory', params: { categorySlug: 'oyun', listType: 'son-yayinlananlar' } }">
+                  Oyun</router-link>
               </span>
             </div>
             <div class="list">
               <div class="item">
                 <span>
-                  <a href="#">Deneme</a>
+                  <router-link
+                    :to="{ name: 'NewsListCategory', params: { categorySlug: 'xxxxx', listType: 'son-yayinlananlar' } }">
+                    xxxxx</router-link>
                 </span>
               </div>
             </div>
@@ -199,13 +218,17 @@
           <div class="outList">
             <div class="titleBox">
               <span>
-                <a href="#">Deneme</a>
+                <router-link
+                  :to="{ name: 'NewsListCategory', params: { categorySlug: 'sinema', listType: 'son-yayinlananlar' } }">
+                  Sinema</router-link>
               </span>
             </div>
             <div class="list">
               <div class="item">
                 <span>
-                  <a href="#">Deneme</a>
+                  <router-link
+                    :to="{ name: 'NewsListCategory', params: { categorySlug: 'xxxxx', listType: 'son-yayinlananlar' } }">
+                    xxxxx</router-link>
                 </span>
               </div>
             </div>
@@ -213,13 +236,17 @@
           <div class="outList">
             <div class="titleBox">
               <span>
-                <a href="#">Deneme</a>
+                <router-link
+                  :to="{ name: 'NewsListCategory', params: { categorySlug: 'spor', listType: 'son-yayinlananlar' } }">
+                  Spor</router-link>
               </span>
             </div>
             <div class="list">
               <div class="item">
                 <span>
-                  <a href="#">Deneme</a>
+                  <router-link
+                    :to="{ name: 'NewsListCategory', params: { categorySlug: 'xxxxx', listType: 'son-yayinlananlar' } }">
+                    xxxxx</router-link>
                 </span>
               </div>
             </div>
@@ -227,13 +254,17 @@
           <div class="outList">
             <div class="titleBox">
               <span>
-                <a href="#">Deneme</a>
+                <router-link
+                  :to="{ name: 'NewsListCategory', params: { categorySlug: 'sağlık', listType: 'son-yayinlananlar' } }">
+                  Sağlık</router-link>
               </span>
             </div>
             <div class="list">
               <div class="item">
                 <span>
-                  <a href="#">Deneme</a>
+                  <router-link
+                    :to="{ name: 'NewsListCategory', params: { categorySlug: 'xxxxx', listType: 'son-yayinlananlar' } }">
+                    xxxxx</router-link>
                 </span>
               </div>
             </div>
