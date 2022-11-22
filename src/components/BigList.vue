@@ -26,7 +26,7 @@
             <router-link :to="{ name: 'NewsDetail', params: { newsSlug: item.slug } }">{{ item.title }}</router-link>
           </div>
           <div class="date">
-            <span>{{ item.publishDate }}</span>
+            <span>{{ item.publishDate.distanceText }}</span>
           </div>
         </div>
       </div>

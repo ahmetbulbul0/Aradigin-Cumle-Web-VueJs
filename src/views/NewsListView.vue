@@ -6,21 +6,18 @@
 import BigList from "../components/BigList.vue";
 import { useRoute } from "vue-router";
 import { getRequest } from "../api";
-import { sortingGenerateByListType } from "../tools/SortingGenerator.js";
-import { watch, watchEffect } from "@vue/runtime-core";
-
+import { sortingGenerateByListType, titleGenerateByListType } from "../tools/Generator.js";
 const route = useRoute();
 
 const listType = route.params.listType;
-
 var page = route.params.page ? route.params.page : 1;
-
+const title = titleGenerateByListType("news", listType);
 const sorting = sortingGenerateByListType("news", listType);
 
 const bigListData = {
-  title: "Son Yayınlananlar",
+  title: title,
   list: await getNews({ limit: 10, sorting: sorting, page: page }),
-  allListLink: "son-yayinlananlar",
+  allListLink: listType,
 };
 
 async function getNews(params) {

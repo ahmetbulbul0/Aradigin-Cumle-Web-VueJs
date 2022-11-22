@@ -12,7 +12,7 @@
             </div>
             <div class="line dateAuthor">
               <span class="writer">Yazar:<a href="">{{ data.author.username }} [{{ data.author.fullName }}]</a></span>
-              <span class="date">{{ data.publishDate }}</span>
+              <span class="date">{{ data.publishDate.distanceText }} | {{ data.publishDate.text }}</span>
             </div>
             <div class="line category">
               <span class="category">
