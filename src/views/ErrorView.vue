@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div v-if="errorCode">
         {{ errorCode }}
     </div>
 </template>
@@ -8,6 +8,5 @@
 import { useRoute } from "vue-router";
 const route = useRoute();
 const errorCode = route.params.errorCode;
-console.log(errorCode);
 </script>
     

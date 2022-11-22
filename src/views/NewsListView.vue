@@ -24,7 +24,7 @@ const bigListData = {
 };
 
 async function getNews(params) {
-  const news = await getRequest("news", { params: params });
+  const news = await getRequest("public/news", { params: params });
   return news.data;
 }
 </script>
