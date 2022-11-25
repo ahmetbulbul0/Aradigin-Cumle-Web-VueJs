@@ -14,7 +14,6 @@ import Middle2List from "../components/2MiddleList.vue";
 import BigList from "../components/BigList.vue";
 import { getRequest } from "../api";
 
-
 const small2ListData = [
   {
     title: "Son Yayınlananlar",

@@ -4,30 +4,24 @@
       <div class="outTitle">
         <div class="inTitle">Yazar Girişi</div>
       </div>
-      <form class="signInForm" method="POST">
+      <form class="signInForm" @submit="signIn">
         <div class="formLine">
-          <label>Hesap Numaranız: </label>
+          <label>Kullanıcı Adınız: </label>
           <div class="outInputText">
-            <input
-              type="text"
-              placeholder="Yazar Hesap Numaranızı Giriniz"
-              name="no"
-            />
+            <input type="text" placeholder="Yazar Kullanıcı Adınızı Giriniz" v-model="username" required
+              autocomplete="username" />
           </div>
         </div>
         <div class="formLine">
-          <label>Hesap Parolanız: </label>
+          <label>Parolanız: </label>
           <div class="outInputText">
-            <input
-              type="password"
-              placeholder="Yazar Hesap Parolanızı Giriniz"
-              name="password"
-            />
+            <input type="password" placeholder="Yazar Hesap Parolanızı Giriniz" v-model="password" required
+              autocomplete="password" />
           </div>
         </div>
-        <div class="formLine">
+        <div class="formLine" v-if="store.state.signInError">
           <div class="outErrorBox">
-            <span> Hatalı Giriş Bilgileri </span>
+            <span>{{ store.state.signInError }}</span>
           </div>
         </div>
         <div class="formLine">
@@ -39,3 +33,23 @@
     </div>
   </div>
 </template>
+
+<script setup>
+import { ref } from "@vue/reactivity";
+import { watch } from "@vue/runtime-core";
+import store from "../store";
+
+const emit = defineEmits(["signIn"]);
+
+const username = ref("");
+const password = ref("");
+
+function signIn(ev) {
+  ev.preventDefault();
+  const credentials = {
+    username: username.value,
+    password: password.value,
+  };
+  emit("signIn", credentials);
+}
+</script>
