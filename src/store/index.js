@@ -1,6 +1,7 @@
 import { createStore } from "vuex";
 import createPersistedState from "vuex-persistedstate";
 import { postRequest } from "../api";
+const env = import.meta.env;
 
 const store = createStore({
   state: {
@@ -36,6 +37,7 @@ const store = createStore({
           case 200:
             state.commit("setToken", response.data.token);
             state.commit("setUserData", response.data.user);
+            state.dispatch("goToUrl", env.VITE_DASHBOARD_URL);
             break;
           case 404:
             state.commit("setSignInError");
@@ -46,6 +48,9 @@ const store = createStore({
         }
       })
     },
+    goToUrl(state, url) {
+      window.location.href = url;
+    }
   },
   modules: {},
   plugins: [createPersistedState()],

@@ -7,9 +7,7 @@ import store from "../store";
 import SignIn from "../components/SignIn.vue";
 
 function signIn(credentials) {
-  store.dispatch("signIn", credentials).then(() => {
-   console.log(store.state.token); 
-  });
+  store.dispatch("signIn", credentials);
 }
 
 </script>

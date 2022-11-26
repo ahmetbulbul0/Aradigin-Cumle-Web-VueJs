@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8000/api/";
+const env = import.meta.env;
 
 const instance = axios.create({
-  baseURL: API_URL,
-  // headers: { Authorization: "Bearer " + "7|xgTLwm9h7gwx94f46rgsXQO0msulS24zfjnsGaSg" }
+  baseURL: env.VITE_API_URL,
+  // headers: { Authorization: "Bearer " + "null" }
 });
 
 async function getRequest(url, extra) {
