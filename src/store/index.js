@@ -1,16 +1,15 @@
 import { createStore } from "vuex";
 import createPersistedState from "vuex-persistedstate";
 import { postRequest } from "../api";
-const env = import.meta.env;
 
 const store = createStore({
   state: {
     token: "",
     signInError: "",
     user: {
-        username: "",
-        fullName: "",
-    }
+      username: "",
+      fullName: "",
+    },
   },
 
   getters: {},
@@ -19,9 +18,9 @@ const store = createStore({
       state.token = token;
     },
     setUserData(state, data) {
-        state.user.username = data.username;
-        state.user.fullName = data.fullName;
-      },
+      state.user.username = data.username;
+      state.user.fullName = data.fullName;
+    },
     setSignInError(state) {
       state.signInError = "Hatalı Giriş Bilgileri";
     },
@@ -37,7 +36,6 @@ const store = createStore({
           case 200:
             state.commit("setToken", response.data.token);
             state.commit("setUserData", response.data.user);
-            state.dispatch("goToUrl", env.VITE_DASHBOARD_URL);
             break;
           case 404:
             state.commit("setSignInError");
@@ -46,11 +44,8 @@ const store = createStore({
             state.commit("setSignInError");
             break;
         }
-      })
+      });
     },
-    goToUrl(state, url) {
-      window.location.href = url;
-    }
   },
   modules: {},
   plugins: [createPersistedState()],
