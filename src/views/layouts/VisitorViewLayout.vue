@@ -4,7 +4,7 @@
     <div class="contentWrap">
       <slot name="realBody"></slot>
     </div>
-      <Footer />
+    <Footer />
   </div>
 
 
@@ -13,4 +13,5 @@
 <script setup>
 import Menu from "../../components/Visitor/Menu.vue";
 import Footer from "../../components/Visitor/Footer.vue";
+import "../../assets/css/style.css";
 </script>

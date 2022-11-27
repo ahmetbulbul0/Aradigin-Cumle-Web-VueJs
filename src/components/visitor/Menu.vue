@@ -276,7 +276,7 @@
 </template>
 
 <script setup>
-import { onMounted } from "vue";
+import { onMounted } from "@vue/runtime-core";
 
 onMounted(() => {
   const menuBtn = document.querySelector(".menuBtn");
