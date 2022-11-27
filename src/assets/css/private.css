@@ -7375,3 +7375,38 @@ body.light .footer .outMinFooter {
     padding-bottom: 1268px;
   }
 }
+.outPaginate {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.outPaginate .inPaginate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.outPaginate .inPaginate a {
+  font-size: 90%;
+  padding: 6px 12px;
+}
+body.dark .outPaginate .inPaginate a {
+  background: #1112177a;
+}
+body.light .outPaginate .inPaginate a {
+  background: #c9c9c97a;
+}
+.outPaginate .inPaginate a i {
+  cursor: pointer;
+}
+body.dark .outPaginate .inPaginate a.number.active {
+  background: var(--dark-blue);
+}
+body.light .outPaginate .inPaginate a.number.active {
+  background: var(--white);
+}
+.outPaginate .inPaginate span.empties {
+  padding: 0 6px;
+  letter-spacing: 3px;
+}

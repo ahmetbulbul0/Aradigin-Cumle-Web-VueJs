@@ -1,5 +1,4 @@
 import axios from "axios";
-
 const env = import.meta.env;
 
 const instance = axios.create({
@@ -83,10 +82,16 @@ function reqConfigGenerate(method, extra) {
         if (extra.params) {
           reqConfig.params = extra.params;
         }
+        if (extra.token) {
+          reqConfig.headers = { Authorization: "Bearer " + extra.token };
+        }
         break;
       case "post":
         if (extra.data) {
           reqConfig = extra.data;
+        }
+        if (extra.token) {
+          reqConfig.headers = { Authorization: "Bearer " + extra.token };
         }
         break;
       default:

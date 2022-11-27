@@ -289,8 +289,6 @@ import { onMounted } from "@vue/runtime-core";
 
 const props = defineProps(["title"]);
 
-console.log(props.title);
-
 onMounted(() => {
     const menuBtn = document.querySelector(".menuBtn");
     const mobilMenuBtn = document.querySelector(".mobilMenuBtn");

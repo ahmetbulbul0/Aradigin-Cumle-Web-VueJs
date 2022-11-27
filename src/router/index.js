@@ -53,8 +53,33 @@ const router = createRouter({
     // Admin Routes
     {
       name: "Dashboard",
-      path: "/:name-paneli/",
+      path: "/:name-paneli",
       component: () => import("../views/admin/DashboardView.vue"),
+    },
+    {
+      name: "Categories",
+      path: "/:name-paneli/kategoriler",
+      component: () => import("../views/admin/CategoriesView.vue"),
+    },
+    {
+      name: "CategoryDetail",
+      path: "/:name-paneli/kategori/:categorySlug",
+      component: () => import("../views/admin/CategoriesView.vue"),
+    },
+    {
+      name: "NewCategory",
+      path: "/:name-paneli/yeni-kategori",
+      component: () => import("../views/admin/CategoriesView.vue"),
+    },
+    {
+      name: "EditCategory",
+      path: "/:name-paneli/kategori-duzenle/:categorySlug",
+      component: () => import("../views/admin/CategoriesView.vue"),
+    },
+    {
+      name: "DeleteCategory",
+      path: "/:name-paneli/kategori-sil/:categorySlug",
+      component: () => import("../views/admin/CategoriesView.vue"),
     },
   ],
 });
