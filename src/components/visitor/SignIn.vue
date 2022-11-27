@@ -37,7 +37,7 @@
 <script setup>
 import { ref } from "@vue/reactivity";
 import { watch } from "@vue/runtime-core";
-import store from "../store";
+import store from "../../store";
 
 const emit = defineEmits(["signIn"]);
 

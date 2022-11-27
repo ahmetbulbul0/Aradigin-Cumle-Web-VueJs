@@ -1,12 +1,17 @@
 <template>
-  <BigList :bigListData="bigListData" />
+  <VisitorViewLayout>
+    <template v-slot:realBody>
+      <BigList :bigListData="bigListData" />
+    </template>
+  </VisitorViewLayout>
 </template>
 
 <script setup>
-import BigList from "../components/BigList.vue";
+import VisitorViewLayout from "../layouts/VisitorViewLayout.vue";
+import BigList from "../../components/visitor/BigList.vue";
 import { useRoute } from "vue-router";
-import { getRequest } from "../api";
-import { sortingGenerateByListType, titleGenerateByListType } from "../tools/Generator.js";
+import { getRequest } from "../../api";
+import { sortingGenerateByListType, titleGenerateByListType } from "../../tools/Generator.js";
 const route = useRoute();
 
 const listType = route.params.listType;

@@ -1,18 +1,21 @@
 <template>
-  <div>
-    <Small2List :small2ListData="small2ListData" />
-    <Middle2List :middle2ListData="middle2ListData" />
-    <Middle2List :middle2ListData="middle2ListData" />
-    <Middle2List :middle2ListData="middle2ListData" />
-    <BigList :bigListData="bigListData" />
-  </div>
+  <VisitorViewLayout>
+    <template v-slot:realBody>
+      <Small2List :small2ListData="small2ListData" />
+      <Middle2List :middle2ListData="middle2ListData" />
+      <Middle2List :middle2ListData="middle2ListData" />
+      <Middle2List :middle2ListData="middle2ListData" />
+      <BigList :bigListData="bigListData" />
+    </template>
+  </VisitorViewLayout>
 </template>
 
 <script setup>
-import Small2List from "../components/2SmallList.vue";
-import Middle2List from "../components/2MiddleList.vue";
-import BigList from "../components/BigList.vue";
-import { getRequest } from "../api";
+import VisitorViewLayout from "../layouts/VisitorViewLayout.vue";
+import Small2List from "../../components/Visitor/2SmallList.vue";
+import Middle2List from "../../components/visitor/2MiddleList.vue"
+import BigList from "../../components/Visitor/BigList.vue";
+import { getRequest } from "../../api";
 
 const small2ListData = [
   {

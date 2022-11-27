@@ -1,11 +1,16 @@
 <template>
-  <NewsDetail :data="newsData" />
+  <VisitorViewLayout>
+    <template v-slot:realBody>
+      <NewsDetail :data="newsData" />
+    </template>
+  </VisitorViewLayout>
 </template>
 
 <script setup>
-import router from "../router";
-import NewsDetail from "../components/NewsDetail.vue";
-import { getRequest } from "../api";
+import VisitorViewLayout from "../layouts/VisitorViewLayout.vue";
+import NewsDetail from "../../components/visitor/NewsDetail.vue";
+import router from "../../router";
+import { getRequest } from "../../api";
 import { useRoute } from "vue-router";
 const route = useRoute();
 const newsSlug = route.params.newsSlug;
