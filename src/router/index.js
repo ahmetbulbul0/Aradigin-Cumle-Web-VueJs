@@ -64,22 +64,22 @@ const router = createRouter({
     {
       name: "CategoryDetail",
       path: "/:name-paneli/kategori/:categorySlug",
-      component: () => import("../views/admin/CategoriesView.vue"),
+      component: () => import("../views/admin/CategoryDetailView.vue"),
     },
     {
       name: "NewCategory",
       path: "/:name-paneli/yeni-kategori",
-      component: () => import("../views/admin/CategoriesView.vue"),
+      component: () => import("../views/admin/NewCategoryView.vue"),
     },
     {
       name: "EditCategory",
       path: "/:name-paneli/kategori-duzenle/:categorySlug",
-      component: () => import("../views/admin/CategoriesView.vue"),
+      component: () => import("../views/admin/CategoryEditView.vue"),
     },
     {
       name: "DeleteCategory",
       path: "/:name-paneli/kategori-sil/:categorySlug",
-      component: () => import("../views/admin/CategoriesView.vue"),
+      component: () => import("../views/admin/CategoryDeleteView.vue"),
     },
   ],
 });

@@ -3,7 +3,6 @@ const env = import.meta.env;
 
 const instance = axios.create({
   baseURL: env.VITE_API_URL,
-  // headers: { Authorization: "Bearer " + "null" }
 });
 
 async function getRequest(url, extra) {
@@ -19,10 +18,11 @@ async function getRequest(url, extra) {
   return request;
 }
 
-async function postRequest(url, extra) {
+async function postRequest(url, extra, header = null) {
   const reqConfig = reqConfigGenerate("post", extra);
+  const config = reqConfigGenerate("post", header);
   const request = await instance
-    .post(url, reqConfig)
+    .post(url, reqConfig, config)
     .then(function (res) {
       return generateResponse(res);
     })
@@ -92,7 +92,7 @@ function reqConfigGenerate(method, extra) {
         }
         if (extra.token) {
           reqConfig.headers = { Authorization: "Bearer " + extra.token };
-        }
+         }
         break;
       default:
         break;

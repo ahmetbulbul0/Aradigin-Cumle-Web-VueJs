@@ -42,25 +42,31 @@
                 </div>
                 <div class="line" v-for="item in data" :key="item.no">
                     <div class="w20">
-                        <span>{{ item.name }}</span>
+                        <router-link :to="{ name: 'CategoryDetail', params: { categorySlug: item.slug } }">{{ item.name
+                        }}</router-link>
                     </div>
                     <div class="w20">
                         <span>{{ item.isParent ? "Ana Kategori" : "Alt Kategori" }}</span>
                     </div>
                     <div class="w20">
-                        <span>{{ item.isChildren ? item.parentCategory.name : "-" }}</span>
+
+                        <router-link v-if="item.isChildren == true"
+                            :to="{ name: 'CategoryDetail', params: { categorySlug: item.parentCategory.slug } }">{{
+                                    item.parentCategory.name
+                            }}</router-link>
+                        <span v-if="item.isParent == true">-</span>
                     </div>
                     <div class="w20">
                         <span>{{ item.slug }}</span>
                     </div>
                     <div class="actions w20">
                         <span>
-                            <a href="#">
+                            <router-link :to="{ name: 'DeleteCategory', params: { categorySlug: item.slug } }">
                                 <i class="fas fa-trash"></i>
-                            </a>
-                            <a href="#">
+                            </router-link>
+                            <router-link :to="{ name: 'EditCategory', params: { categorySlug: item.slug } }">
                                 <i class="fas fa-edit"></i>
-                            </a>
+                            </router-link>
                         </span>
                     </div>
                 </div>
@@ -76,5 +82,4 @@ const props = defineProps(["data"]);
 
 const data = props.data.data.data;
 const paginate = props.data.data.pagination;
-
 </script>
