@@ -3,34 +3,26 @@
         <div class="inMenu">
             <div class="bar">
                 <span class="textBox">
-                    <a href="" class="strong">
+                    <router-link :to="{ name: 'Dashboard' }" class="strong">
                         <i class="far fa-newspaper"></i>
                         {{ title }}
-                    </a>
+                    </router-link>
                 </span>
                 <span class="brace"></span>
                 <span class="textBox">
-                    <a href="#">
-                        Haberler
-                    </a>
+                    <router-link :to="{ name: 'Categories' }">Kategoriler</router-link>
                 </span>
                 <span class="brace"></span>
                 <span class="textBox">
-                    <a href="#">
-                        Kategoriler
-                    </a>
+                    <router-link :to="{ name: 'Dashboard' }">Findm</router-link>
                 </span>
                 <span class="brace"></span>
                 <span class="textBox">
-                    <a href="#">
-                        Kategori Grupları
-                    </a>
+                    <router-link :to="{ name: 'Dashboard' }">Findm</router-link>
                 </span>
                 <span class="brace"></span>
                 <span class="textBox">
-                    <a href="#">
-                        Kaynak Siteler
-                    </a>
+                    <router-link :to="{ name: 'Dashboard' }">Findm</router-link>
                 </span>
             </div>
             <div class="bar">
@@ -137,13 +129,13 @@
                     <div class="outList">
                         <div class="titleBox">
                             <span>
-                                <a href="">Kullanıcı Tipleri</a>
+                                <router-link :to="{ name: 'Categories' }">Kategoriler</router-link>
                             </span>
                         </div>
                         <div class="list">
                             <div class="item">
                                 <span>
-                                    <a href="">Kullanıcı Tipi Ekle</a>
+                                    <router-link :to="{ name: 'NewCategory' }">Yeni Kategori Oluştur</router-link>
                                 </span>
                             </div>
                         </div>
@@ -151,72 +143,60 @@
                     <div class="outList">
                         <div class="titleBox">
                             <span>
-                                <a href="">Kullanıcılar</a>
+                                <router-link :to="{ name: 'Dashboard' }">Findm</router-link>
                             </span>
                         </div>
                         <div class="list">
                             <div class="item">
                                 <span>
-                                    <a href="#">Kullanıcı Ekle</a>
-                                </span>
-                            </div>
-                            <div class="item">
-                                <span>
-                                    <a href="#">Kullanıcı Ayarları</a>
+                                    <router-link :to="{ name: 'Dashboard' }">Findm</router-link>
                                 </span>
                             </div>
                         </div>
                     </div>
+
                     <div class="outList">
                         <div class="titleBox">
                             <span>
-                                <a href="#">Kaynak Siteleri</a>
+                                <router-link :to="{ name: 'Dashboard' }">Findm</router-link>
                             </span>
                         </div>
                         <div class="list">
                             <div class="item">
                                 <span>
-                                    <a href="#">Kaynak Site Ekle</a>
-                                </span>
-                            </div>
-                            <div class="item">
-                                <span>
-                                    <a href="#">Kaynak Linkler</a>
+                                    <router-link :to="{ name: 'Dashboard' }">Findm</router-link>
                                 </span>
                             </div>
                         </div>
                     </div>
+
                     <div class="outList">
                         <div class="titleBox">
                             <span>
-                                <a href="#">Kategori Tipleri</a>
+                                <router-link :to="{ name: 'Dashboard' }">Findm</router-link>
                             </span>
                         </div>
                         <div class="list">
                             <div class="item">
                                 <span>
-                                    <a href="#">Kategori Tipi Ekle</a>
+                                    <router-link :to="{ name: 'Dashboard' }">Findm</router-link>
                                 </span>
                             </div>
                         </div>
                     </div>
+
                 </div>
                 <div class="listsBar">
                     <div class="outList">
                         <div class="titleBox">
                             <span>
-                                <a href="#">Kategoriler</a>
+                                <router-link :to="{ name: 'Dashboard' }">Findm</router-link>
                             </span>
                         </div>
                         <div class="list">
                             <div class="item">
                                 <span>
-                                    <a href="#">Kategori Ekle</a>
-                                </span>
-                            </div>
-                            <div class="item">
-                                <span>
-                                    <a href="#">Kategoriler Şeması</a>
+                                    <router-link :to="{ name: 'Dashboard' }">Findm</router-link>
                                 </span>
                             </div>
                         </div>
@@ -224,60 +204,48 @@
                     <div class="outList">
                         <div class="titleBox">
                             <span>
-                                <a href="#">Kategori Grupları</a>
+                                <router-link :to="{ name: 'Dashboard' }">Findm</router-link>
                             </span>
                         </div>
                         <div class="list">
                             <div class="item">
                                 <span>
-                                    <a href="#">Kategori Grubu Ekle</a>
-                                </span>
-                            </div>
-                            <div class="item">
-                                <span>
-                                    <a href="#">Kategori Grubu Link Metinleri</a>
+                                    <router-link :to="{ name: 'Dashboard' }">Findm</router-link>
                                 </span>
                             </div>
                         </div>
                     </div>
+
                     <div class="outList">
                         <div class="titleBox">
                             <span>
-                                <a href="#">Haberler</a>
+                                <router-link :to="{ name: 'Dashboard' }">Findm</router-link>
                             </span>
                         </div>
                         <div class="list">
                             <div class="item">
                                 <span>
-                                    <a href="#">Haber İstatistikleri</a>
+                                    <router-link :to="{ name: 'Dashboard' }">Findm</router-link>
                                 </span>
                             </div>
                         </div>
                     </div>
+
                     <div class="outList">
                         <div class="titleBox">
                             <span>
-                                <a href="#">Ayarlar</a>
+                                <router-link :to="{ name: 'Dashboard' }">Findm</router-link>
                             </span>
                         </div>
                         <div class="list">
                             <div class="item">
                                 <span>
-                                    <a href="#">Tema</a>
-                                </span>
-                            </div>
-                            <div class="item">
-                                <span>
-                                    <a href="#">Sabitler</a>
-                                </span>
-                            </div>
-                            <div class="item">
-                                <span>
-                                    <a href="#">Ziyaretçiler</a>
+                                    <router-link :to="{ name: 'Dashboard' }">Findm</router-link>
                                 </span>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
