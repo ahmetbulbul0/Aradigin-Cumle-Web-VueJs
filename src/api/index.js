@@ -45,10 +45,11 @@ async function deleteRequest(url, extra) {
   return request;
 }
 
-async function patchRequest(url, extra) {
+async function patchRequest(url, extra, header = null) {
   const reqConfig = reqConfigGenerate("patch", extra);
+  const config = reqConfigGenerate("patch", header);
   const request = await instance
-    .delete(url, reqConfig)
+    .patch(url, reqConfig, config)
     .then(function (res) {
       return generateResponse(res);
     })
@@ -92,7 +93,15 @@ function reqConfigGenerate(method, extra) {
         }
         if (extra.token) {
           reqConfig.headers = { Authorization: "Bearer " + extra.token };
-         }
+        }
+        break;
+      case "patch":
+        if (extra.data) {
+          reqConfig = extra.data;
+        }
+        if (extra.token) {
+          reqConfig.headers = { Authorization: "Bearer " + extra.token };
+        }
         break;
       default:
         break;

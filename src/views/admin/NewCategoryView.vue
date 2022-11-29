@@ -17,7 +17,6 @@ import { ref } from '@vue/reactivity';
 
 const errors = ref("");
 const createdData = ref("");
-const success = ref("");
 
 async function create(credentials) {
     errors.value = "";

@@ -3,11 +3,11 @@
         <div class="inBigForm">
             <div class="outBigFormTitle">
                 <span class="inBigFormTitle">
-                    Yeni Kategori Oluştur
+                    Kategori Düzenle
                 </span>
             </div>
             <div class="outBigFormContent">
-                <form class="inBigFormContent" @submit="create">
+                <form class="inBigFormContent" @submit="edit">
                     <div class="line">
                         <span class="inputLabel">Adı:</span>
                         <div class="outInputText">
@@ -48,7 +48,7 @@
                     <div class="line">
                         <div class="outSubmitBox">
                             <button>
-                                Oluştur
+                                Düzenlemeyi Kaydet
                             </button>
                         </div>
                     </div>
@@ -63,16 +63,23 @@ import { ref } from "@vue/reactivity";
 import { getRequest } from "../../api";
 import store from "../../store";
 
+const emit = defineEmits(["edit"]);
+const props = defineProps(["data", "errors"]);
+const data = props.data;
+
 const categories = await getRequest("categories", { token: store.state.token });
 
-const name = ref("");
+const name = ref(data.name);
 const type = ref("");
 const parentCategory = ref("");
 
-const emit = defineEmits(["create"]);
-const props = defineProps(["errors"]);
+if (data.isParent == true && data.isChildren == false) {
+    type.value = "main";
+} else if (data.isParent == false && data.isChildren == true) {
+    type.value = "sub";
+}
 
-function create(ev) {
+function edit(ev) {
     ev.preventDefault();
     const credentials = {};
     credentials.name = name.value;
@@ -85,7 +92,7 @@ function create(ev) {
         credentials.isParent = true;
         credentials.parentCategory = parentCategory.value;
     }
-    emit("create", credentials);
+    emit("edit", credentials);
 }
 
 </script>
