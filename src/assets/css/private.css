@@ -2594,13 +2594,13 @@ body.light
   font-weight: 300;
   text-align: center;
 }
-.outDeleteConfirm .inDeleteConfirm .footer {
+.outDeleteConfirm .inDeleteConfirm .delete-footer {
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
-.outDeleteConfirm .inDeleteConfirm .footer button {
+.outDeleteConfirm .inDeleteConfirm .delete-footer a {
   padding: 6px 12px;
   border-radius: 50px;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
@@ -2608,10 +2608,10 @@ body.light
   cursor: pointer;
   font-weight: 300;
 }
-.outDeleteConfirm .inDeleteConfirm .footer button:hover {
+.outDeleteConfirm .inDeleteConfirm .delete-footer a:hover {
   background: linear-gradient(298deg, var(--red), var(--yellow));
 }
-body.light .outDeleteConfirm .inDeleteConfirm .footer button:hover {
+body.light .outDeleteConfirm .inDeleteConfirm .delete-footer a:hover {
   color: var(--white);
 }
 /* MY NEWS */

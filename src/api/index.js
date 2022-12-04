@@ -103,6 +103,14 @@ function reqConfigGenerate(method, extra) {
           reqConfig.headers = { Authorization: "Bearer " + extra.token };
         }
         break;
+      case "delete":
+        if (extra.data) {
+          reqConfig = extra.data;
+        }
+        if (extra.token) {
+          reqConfig.headers = { Authorization: "Bearer " + extra.token };
+        }
+        break;
       default:
         break;
     }
