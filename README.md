@@ -11,8 +11,13 @@
 
 ## Dependencies
 
-- *Vue-Router*
-- *Axios*
+- _Vue-Router_
+- _Axios_
+- _Vuex_
+- _Vuex Persistedstate_
+- _Dotenv_
+- _Google Fonts(Poppins)_
+- _Google Fonts(Righteous)_
 
 ## Project Setup Process
 
